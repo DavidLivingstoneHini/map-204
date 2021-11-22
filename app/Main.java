@@ -2,11 +2,9 @@ package app;
 
 import java.util.Scanner;
 
-import app.algorithms.AStar;
 import app.algorithms.Dijkstra;
 import app.graph.Digraph;
 import app.graph.Edge;
-import app.graph.Graph;
 import app.graph.Node;
 
 public class Main {
@@ -14,14 +12,13 @@ public class Main {
 
     public static Digraph addNodes(Node[] nodes){
         Digraph graph = new Digraph();
-        for(int i = 0; i < nodes.length; i++){
-            graph.addNode(nodes[i]);
+        for (Node node : nodes) {
+            graph.addNode(node);
         }
+        return graph;
     }
 
     public static void main(String[] args) {
-        // Digraph graph = new Digraph();
-        // Graph graph = new Graph();
         Node a = new Node("Great Hall");
         Node b = new Node("Commonwealth Hall");
         Node c = new Node("Balme Library");
@@ -32,19 +29,9 @@ public class Main {
         Node h = new Node("Sarbah Field");
         Node i = new Node("Night Market");
         Node j = new Node("Diaspora");
+        Node nodes[] = {a,b,c,d,e,f,g,h,i,j};
 
-
-        Digraph graph = addNodes([a,b,c,d,e,f,g,h,i,j]);
-        // graph.addNode(a);
-        // graph.addNode(b);
-        // graph.addNode(c);
-        // graph.addNode(d);
-        // graph.addNode(e);
-        // graph.addNode(f);
-        // graph.addNode(g);
-        // graph.addNode(h);
-        // graph.addNode(i);
-        // graph.addNode(j);
+        Digraph graph = addNodes(nodes);
 
         graph.addEdge(new Edge(a, b, 1));
         graph.addEdge(new Edge(b, c, 1));
@@ -85,7 +72,5 @@ public class Main {
         String place2 = scanner.nextLine();
         Node destination = graph.getNodeByName(place2);
         Dijkstra.findShortestPath(graph, source, destination);
-
-        // AStar.findShortestPath(graph, a,f);
     }
 }
