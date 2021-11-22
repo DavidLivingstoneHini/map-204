@@ -41,21 +41,27 @@ public class Main {
         graph.addEdge(new Edge(b, c, 1));
         graph.addEdge(new Edge(c, d, 2));
 
+        graph.addEdge(new Edge(e, d, 1));
         graph.addEdge(new Edge(d, e, 1));
         graph.addEdge(new Edge(e, f, 3));
+        graph.addEdge(new Edge(f, e, 3));
 
         graph.addEdge(new Edge(b, h, 2));
+        graph.addEdge(new Edge(h, b, 2));
         graph.addEdge(new Edge(b, g, 1));
+        graph.addEdge(new Edge(g, b, 1));
         graph.addEdge(new Edge(c, g, 2));
+        graph.addEdge(new Edge(g, c, 2));
 
         graph.addEdge(new Edge(g, f, 3));
+        graph.addEdge(new Edge(f, g, 3));
         graph.addEdge(new Edge(g, h, 2));
         graph.addEdge(new Edge(h, g, 2));
-        graph.addEdge(new Edge(g, h, 2));
 
         graph.addEdge(new Edge(h, i, 3));
         graph.addEdge(new Edge(i, h, 3));
         graph.addEdge(new Edge(f, i, 1));
+        graph.addEdge(new Edge(i, f, 1));
 
         graph.addEdge(new Edge(i, j, 2));
         graph.addEdge(new Edge(j, i, 2));
