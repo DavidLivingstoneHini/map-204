@@ -12,8 +12,15 @@ import app.graph.Node;
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static Digraph addNodes(Node[] nodes){
         Digraph graph = new Digraph();
+        for(int i = 0; i < nodes.length; i++){
+            graph.addNode(nodes[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Digraph graph = new Digraph();
         // Graph graph = new Graph();
         Node a = new Node("Great Hall");
         Node b = new Node("Commonwealth Hall");
@@ -26,16 +33,18 @@ public class Main {
         Node i = new Node("Night Market");
         Node j = new Node("Diaspora");
 
-        graph.addNode(a);
-        graph.addNode(b);
-        graph.addNode(c);
-        graph.addNode(d);
-        graph.addNode(e);
-        graph.addNode(f);
-        graph.addNode(g);
-        graph.addNode(h);
-        graph.addNode(i);
-        graph.addNode(j);
+
+        Digraph graph = addNodes([a,b,c,d,e,f,g,h,i,j]);
+        // graph.addNode(a);
+        // graph.addNode(b);
+        // graph.addNode(c);
+        // graph.addNode(d);
+        // graph.addNode(e);
+        // graph.addNode(f);
+        // graph.addNode(g);
+        // graph.addNode(h);
+        // graph.addNode(i);
+        // graph.addNode(j);
 
         graph.addEdge(new Edge(a, b, 1));
         graph.addEdge(new Edge(b, c, 1));
